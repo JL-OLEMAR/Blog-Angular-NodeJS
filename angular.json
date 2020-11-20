@@ -24,7 +24,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/styles.css"
             ],
             "scripts": []
           },
@@ -120,5 +121,8 @@
       }
     }
   },
-  "defaultProject": "AprendiendoAngular"
+  "defaultProject": "AprendiendoAngular",
+  "cli": {
+    "analytics": true
+  }
 }

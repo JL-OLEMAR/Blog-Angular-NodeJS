@@ -1,9 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { routing, appRoutingProviders } from './app.routing';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { routing, appRoutingProviders } from './app.routing';
 import { MomentModule } from 'angular2-moment';
+import { AngularFileUploaderModule } from 'angular-file-uploader';
 
 import { AppComponent } from './app.component';
 import { MiComponente } from './components/mi-componente/mi-componente.component';
@@ -49,10 +50,11 @@ import { ArticleNewComponent } from './components/article-new/article-new.compon
   ],
   imports: [
     BrowserModule,
-    routing,
     FormsModule,
     HttpClientModule,
-    MomentModule
+    MomentModule,
+    AngularFileUploaderModule,
+    routing
   ],
   providers: [
     appRoutingProviders

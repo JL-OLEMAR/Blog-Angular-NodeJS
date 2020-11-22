@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
+import swal from 'sweetalert';
 import { ArticleService } from '../../services/article.service';
 import { Global } from '../../services/global';
 import { Article } from '../../models/article';
@@ -40,6 +41,36 @@ export class ArticleComponent implements OnInit {
         }
       );
     });
+  }
+
+  delete(id) {
+
+    swal({
+      title: '¿Estas Seguro?',
+      text: 'Una vez borrado el artículo, no podras recuperarlo!',
+      icon: 'warning',
+      buttons: [true, true],
+      dangerMode: true
+    })
+      .then((willDelete) => {
+        if (willDelete) {
+          this._articleService.delete(id).subscribe(
+            response => {
+              swal('El artículo ha sido borrado!', {
+                icon: 'success',
+              });
+              this._router.navigate(['/blog']);
+            },
+            error => {
+              console.log(error);
+              this._router.navigate(['/blog']);
+            }
+          );
+
+        } else {
+          swal('Tranquilo, nada se ha borrado ;).');
+        }
+      });
   }
 
 }

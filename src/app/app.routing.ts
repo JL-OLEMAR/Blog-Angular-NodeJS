@@ -9,6 +9,7 @@ import { FormularioComponent } from './components/formulario/formulario.componen
 import { PeliculasComponent } from './components/peliculas/peliculas.component';
 import { PaginaComponent } from './components/pagina/pagina.component';
 import { ArticleComponent } from './components/article/article.component';
+import { SearchComponent } from './components/search/search.component';
 import { ErrorComponent } from './components/error/error.component';
 
 // Array de rutas
@@ -17,6 +18,7 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'blog', component: BlogComponent },
   { path: 'blog/articulo/:id', component: ArticleComponent },
+  { path: 'buscar/:search', component: SearchComponent },
   { path: 'formulario', component: FormularioComponent },
   { path: 'peliculas', component: PeliculasComponent },
   { path: 'pagina-de-pruebas', component: PaginaComponent },
